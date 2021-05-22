@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const router = require('express').Router();
+const usersRepo = require('../repositories/users')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
