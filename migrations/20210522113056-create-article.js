@@ -6,13 +6,14 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BOOLEAN
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING?
+        unique: true
       },
       content: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       published: {
         type: Sequelize.INTEGER
