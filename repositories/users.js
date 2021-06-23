@@ -9,8 +9,12 @@ module.exports = {
     getAdmins() { },
     getAuthors() { },
     getGuests(){ }, 
-    getUser(id) { },
-    getUserByEmail(email) { },
+    getUser(id) { 
+        return User.findOne({ where:{id} });
+    }, 
+    getUserByEmail(email) { 
+        return User.findOne({ where:{email} });
+    },
     addUser(user) { },
     updateUser() { },
     deleteUser() { },

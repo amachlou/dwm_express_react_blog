@@ -1,0 +1,132 @@
+
+
+
+
+
+header {
+
+    height: 66px;
+    background-color:rgb(15, 15, 15);
+    color: white;
+}
+
+ .admin-wrapper{
+     display: flex;
+     height: calc(100% - 66px);
+     
+ }
+
+ .admin-wrapper .left-sidebar{
+    flex: 2;
+    height: 100%;
+    background-color: rgb(53, 53, 53);
+ }
+
+ .admin-wrapper .admin-content{
+    flex: 8;
+    height: 100%;
+    padding: 40px 100px 100px;
+    overflow: scroll;
+    border: dashed 3px green;
+
+}
+
+ .admin-wrapper .left-sidebar ul{
+     margin: 0px;
+     padding: 0px;
+     color: rgb(226, 226, 226);
+ }
+
+ .admin-wrapper .left-sidebar ul li a {
+     padding: 18px;
+     display: block;
+     border-bottom: 1px solid rgb(87, 87, 87) ;
+ }
+
+ .admin-wrapper .left-sidebar ul li a:hover{
+     background-color: rgb(24, 24, 24);
+ }
+
+ .admin-content .page-title{
+     text-align: center;
+     margin-bottom:1.5rem;
+ }
+
+ table{
+     width: 100%;
+     border-collapse: collapse;
+     font-size: 1.1rem;
+ }
+
+ th,td{
+
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid lightgray;
+ }
+ .edit{
+    color:rgb(88, 155, 255) ;
+ }
+
+ .delete{
+    color: rgb(255, 142, 36);
+
+ }
+
+ .publish{
+    color: rgb(12, 182, 111);
+ }
+
+ .edit:hover,
+ .delete:hover,
+ .publish:hover{
+    text-decoration: underline;
+ }
+
+ form{
+     margin-bottom: 15px;
+ }
+
+
+ /*?  QUERIES  */
+
+
+ @media only screen and (max-width:600px){
+
+
+    .admin-wrapper .left-sidebar{
+
+        flex:4;
+    }
+
+    .admin-wrapper .admin-content{
+    
+        padding: 20px 25px 100px;
+       
+    
+    }
+
+    .btn-big{
+        padding: 0.5rem 0.6rem;
+    }
+   
+    .page-title{
+
+        font-size: 1.2rem;
+
+    }
+   
+
+ }
+
+
+
+ @media only screen and (max-width:400px){
+ 
+
+    .btn-big{
+        padding: 0.4rem 0.1rem;
+    }
+   
+
+}

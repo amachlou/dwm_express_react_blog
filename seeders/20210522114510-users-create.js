@@ -1,4 +1,5 @@
 'use strict';
+const faker = require('faker');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -11,147 +12,25 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-     await queryInterface.bulkInsert('Users', [{
-      username: 'John',
-      email: 'john@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'abdo',
-      email: 'abdo@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'jihane',
-      email: 'jihane@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'aziz',
-      email: 'aziz@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'youssef',
-      email: 'youssef@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'hassan',
-      email: 'hassan@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'mohammed',
-      email: 'mohammed@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'hassna',
-      email: 'hassna@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'meryem',
-      email: 'meryem@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'hafid',
-      email: 'hafid@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'casey',
-      email: 'casey@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'yura',
-      email: 'yura@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'huan',
-      email: 'huan@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'candice',
-      email: 'candice@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'maria',
-      email: 'maria@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'sarah',
-      email: 'sarah@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'cecilia',
-      email: 'cecilia@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'jack',
-      email: 'jack@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'norman',
-      email: 'norman@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     },{
-      username: 'choun',
-      email: 'choun@dwm.ma',
-      password: '123456',
-      role: 'user',
-      createdAt : new Date(),
-      updatedAt : new Date()
-     }], {});
+     var usersToAdd = [];
+     for(let i=0; i<20; i++){
+       let randomData = {
+          // user.username= faker.name.lastName()
+          // user.email= faker.internet.email()
+          // user.password= faker.internet.password()
+          // user.role= faker.random.arrayElement(['admin','author','author','author'])
+          // user.createdAt= faker.date.between(2000,2021)
+          // user.updatedAt= faker.date.recent(user.createdAt.toFullYear(),2021)
+           username: faker.internet.userName(),
+           email: faker.internet.email(),
+           password: faker.internet.password(),
+           role: faker.random.arrayElement(['admin','author','author','author']),
+           createdAt: faker.date.between(2000,2021),
+           updatedAt: faker.date.recent()
+         };
+         usersToAdd.push(randomData);
+     }
+      await queryInterface.bulkInsert('Users', usersToAdd, {});
 
      
   },
