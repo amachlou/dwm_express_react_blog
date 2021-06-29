@@ -1,16 +1,16 @@
-const { User } = require('../models')
+const { Tag } = require('../models')
 
 module.exports = {
-    getAllUsers() {
-        return User.findAll()
+    getAllTags() {
+        return Tag.findAll()
     },
    
-    getUsers(offset = 0, limit = 10) { },
+    getTags(offset = 0, limit = 10) { },
     getAdmins() { },
     getAuthors() { },
     getGuests(){ }, 
-    getUser(id) { 
-        return User.findOne({ where:{id} });
+    getTag(id) { 
+        return Tag.findOne({ where:{id} });
     }, 
     getUserByEmail(email) { },
     addUser(user) { },
